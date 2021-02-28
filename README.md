@@ -40,6 +40,8 @@ python SourceMapX.py -m R -d urls.txt
 
 程序还不够完善，后续看情况是否更新吧。
 
+Happy Hacking!!!
+
 ## 致谢
 
 [unwebpack-sourcemap](https://github.com/rarecoil/unwebpack-sourcemap) @rarecoil
