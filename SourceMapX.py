@@ -244,7 +244,7 @@ class SourceMapExtractor(object):
     def _get_remote_data(self, uri):
         """Get remote data via http."""
         try:
-            result = requests.get(uri,verify=False)
+            result = requests.get(uri,verify=False,timeout=30)
         
             if result.status_code == 200:
                 return result.text
