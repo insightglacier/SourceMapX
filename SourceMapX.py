@@ -139,8 +139,11 @@ class SourceMapExtractor(object):
                 next_target_uri = source
             else:
                 current_uri = urlparse(uri)
-                built_uri = current_uri.scheme + "://" + current_uri.netloc + source
-                next_target_uri = built_uri
+                if source.startswith('//'):
+                    next_target_uri = current_uri.scheme + ':' + source
+                else:
+                    built_uri = current_uri.scheme + "://" + current_uri.netloc + source
+                    next_target_uri = built_uri
 
             js_data = self._get_remote_data(next_target_uri)
             if js_data:
